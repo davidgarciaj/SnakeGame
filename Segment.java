@@ -10,9 +10,8 @@ public class Segment
     private int posx;
     private int posy;
     private int direccion;
-    public static final int DIFERENCIA_DE_GRADOS_ENTRE_DIRECCIONES = 90;
+    public static final int DIFERENCIA_GRADOS = 90;
     public static final int LONGITUD_SEGMENTO = 4;
-    private static final Color color = Color.BLACK;
 
     /**
      * Constructor for objects of class Segment
@@ -28,6 +27,8 @@ public class Segment
      * 
      */
     public void draw(Canvas lienzo){
-        
+        Pen pen = new Pen(posx, posy, lienzo);
+        pen.turnTo(direccion * DIFERENCIA_GRADOS);
+        pen.move(LONGITUD_SEGMENTO);
     }
 }
