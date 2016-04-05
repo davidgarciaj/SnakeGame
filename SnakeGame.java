@@ -27,6 +27,7 @@ public class SnakeGame
      */
     public void drawSnake()
     {
+        lienzo.erase();
         serpiente.dibujar(lienzo);
     }
 }
