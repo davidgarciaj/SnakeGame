@@ -28,10 +28,10 @@ public class Segment
     /**
      * 
      */
-    public void draw(Canvas lienzo){
+    public void dibujar(Canvas lienzo){
         Pen pen = new Pen(posx, posy, lienzo);
         pen.turnTo(direccion * DIFERENCIA_GRADOS);        
-        pen.setColor(Color.WHITE);
+        pen.setColor(color);
         pen.move(LONGITUD_SEGMENTO);
     }
     
@@ -39,7 +39,7 @@ public class Segment
     /**
      * 
      */
-    public void erase(Canvas lienzo){
+    public void borrar(Canvas lienzo){
         Pen pen = new Pen(posx, posy, lienzo);
         pen.turnTo(direccion * DIFERENCIA_GRADOS);
         pen.setColor(Color.WHITE);
@@ -78,7 +78,7 @@ public class Segment
      * 
      */
     public int getPosicionFinalY(){    
-        int posFinalY = posx;
+        int posFinalY = posy;
         if(direccion == 1){
             posFinalY+= LONGITUD_SEGMENTO;
         }
@@ -93,5 +93,12 @@ public class Segment
      */
     public int getDireccion(){
         return direccion;
+    }
+    
+    /**
+     * 
+     */
+    public boolean colisionaCon(Segment segmento){
+        return (segmento.getPosicionFinalX() == posx && segmento.getPosicionFinalY() == posy);
     }
 }
