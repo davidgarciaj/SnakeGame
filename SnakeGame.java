@@ -8,26 +8,25 @@
 public class SnakeGame
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private Snake serpiente;
+    private Canvas lienzo;
+    private static final int ANCHO = 600;
+    private static final int ALTO = 500;
 
     /**
      * Constructor for objects of class SnakeGame
      */
     public SnakeGame()
     {
-        // initialise instance variables
-        x = 0;
+        serpiente = new Snake(ANCHO, ALTO);
+        lienzo = new Canvas("Juego de la Serpiente", ANCHO, ALTO);
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Dibuja la serpiente en nuestro lienzo
      */
-    public int sampleMethod(int y)
+    public void drawSnake()
     {
-        // put your code here
-        return x + y;
+        serpiente.dibujar(lienzo);
     }
 }
