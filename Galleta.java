@@ -47,6 +47,6 @@ public class Galleta
     public void borrar(Canvas lienzo)
     {
         lienzo.setForegroundColor(lienzo.getBackgroundColor());
-        lienzo.fillCircle(xPos -RADIO,yPos -RADIO, (RADIO*2));
+        lienzo.fillCircle(xPos -RADIO,yPos -RADIO, (RADIO*3));
     }
 }
