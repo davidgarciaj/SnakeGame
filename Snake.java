@@ -12,11 +12,11 @@ public class Snake
 {
     private int anchoLienzo;
     private int altoLienzo;
-    private static final int NUMERO_SEGMENTOS_INICIALES = 13;
+    private static final int NUMERO_SEGMENTOS_INICIALES = 4;
     private static final Color color = Color.BLACK;
     private ArrayList<Segment> segmentos;   
     private static final int DIFERENCIA_DE_GRADOS_ENTRE_DIRECCIONES = 90;
-    private static final int MARGEN_LIENZO = 10;
+    public static final int MARGEN_LIENZO = 10;
     private static final int TAMANO_CABEZA = 8;
 
     /*
@@ -166,13 +166,12 @@ public class Snake
      */
     public boolean mover(Canvas lienzo){        
         borrar(lienzo);
-        boolean colision = addSegment();
-        if(colision){
-            Random rdn = new Random();
+        boolean noColision = addSegment();
+        if(noColision){
             segmentos.get(0).borrar(lienzo); 
             segmentos.remove(0);
         }
         dibujar(lienzo);
-        return colision;
+        return noColision;
     }
 }

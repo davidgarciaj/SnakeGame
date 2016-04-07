@@ -11,7 +11,7 @@ public class Segment
     private int posy;
     private int direccion;
     private Color color;
-    public static final int LONGITUD_SEGMENTO = 4;
+    public static final int LONGITUD_SEGMENTO = 10;
 
     /**
      * Constructor for objects of class Segment

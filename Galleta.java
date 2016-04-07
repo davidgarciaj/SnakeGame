@@ -10,13 +10,14 @@ public class Galleta
     public static int NUM_GALLETAS = 0;
     private int xPos;
     private int yPos;
-    private static final int RADIO = 2;
+    private static final int RADIO = 4;
 
     /**
      * Constructor for objects of class Galleta
      */
     public Galleta(int xPos, int yPos)
     {
+        NUM_GALLETAS++;
         this.xPos = xPos;
         this.yPos = yPos;        
     }
