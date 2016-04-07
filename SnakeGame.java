@@ -30,4 +30,15 @@ public class SnakeGame
         lienzo.erase();
         serpiente.dibujar(lienzo);
     }
+    
+    /**
+     * La serpiente se mueve aleatoriamente por toda la pantalla,
+     * en caso de que no pueda moverse sale el mensje (Game Over)
+     */
+    public void animateSnake(){
+        while(serpiente.mover(lienzo)){
+            lienzo.wait(5);
+        }
+        lienzo.drawString("Game Over", (ANCHO/2)-30,(ALTO/2)-5);
+    }
 }

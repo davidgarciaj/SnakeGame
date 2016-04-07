@@ -147,7 +147,7 @@ public class Snake
     /**
      * Genera un movimiento en la serpiente
      */
-    public boolean move(Canvas lienzo){        
+    public boolean mover(Canvas lienzo){        
         borrar(lienzo);
         boolean colision = addSegment();
         if(colision){
