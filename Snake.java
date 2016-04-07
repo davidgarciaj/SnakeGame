@@ -40,7 +40,7 @@ public class Snake
         for (Segment segmento : segmentos) {
             segmento.dibujar(lienzo);
         }
-        lienzo.setForegroundColor(Color.BLACK);
+        lienzo.setForegroundColor(color);
         Segment ultimoSegmento = segmentos.get(segmentos.size()-1);
         lienzo.fillCircle(ultimoSegmento.getPosicionFinalX()-(TAMANO_CABEZA/2),ultimoSegmento.getPosicionFinalY()-(TAMANO_CABEZA/2), TAMANO_CABEZA);
     }
@@ -50,7 +50,7 @@ public class Snake
      */
     public void borrar(Canvas lienzo)
     {  
-        lienzo.setForegroundColor(Color.WHITE);
+        lienzo.setForegroundColor(lienzo.getBackgroundColor());
         Segment ultimoSegmento = segmentos.get(segmentos.size()-1);
         lienzo.fillCircle(ultimoSegmento.getPosicionFinalX()-(TAMANO_CABEZA/2),ultimoSegmento.getPosicionFinalY()-(TAMANO_CABEZA/2), TAMANO_CABEZA); 
         for (Segment segmento : segmentos) {

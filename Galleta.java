@@ -35,9 +35,18 @@ public class Galleta
     /**
      * 
      */
-    public void dibujarGalleta(Canvas lienzo)
+    public void dibujar(Canvas lienzo)
     {
         lienzo.setForegroundColor(Color.ORANGE);
+        lienzo.fillCircle(xPos -RADIO,yPos -RADIO, (RADIO*2));
+    }
+
+    /**
+     * 
+     */
+    public void borrar(Canvas lienzo)
+    {
+        lienzo.setForegroundColor(lienzo.getBackgroundColor());
         lienzo.fillCircle(xPos -RADIO,yPos -RADIO, (RADIO*2));
     }
 }

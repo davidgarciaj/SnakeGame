@@ -75,7 +75,18 @@ public class SnakeGame
             else{i--;}
         }
         for(Galleta galleta : galletas){
-            galleta.dibujarGalleta(lienzo);
+            galleta.dibujar(lienzo);
+        }
+    }
+    
+    /**
+     * Hace que la serpiente coma la galleta al pasar por ella y le añade un segmento
+     */
+    public void ComeGalleta(Galleta galleta){
+        galleta.borrar(lienzo);
+        while(!serpiente.addSegment()){
+            serpiente.borrar(lienzo);
+            serpiente.dibujar(lienzo);
         }
     }
 }
