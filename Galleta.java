@@ -10,7 +10,7 @@ public class Galleta
     public static int NUM_GALLETAS = 0;
     private int xPos;
     private int yPos;
-    private static final int DIAMETRO = 4;
+    private static final int RADIO = 2;
 
     /**
      * Constructor for objects of class Galleta
@@ -37,6 +37,6 @@ public class Galleta
     public void dibujarGalleta(Canvas lienzo)
     {
         lienzo.setForegroundColor(Color.ORANGE);
-        lienzo.fillCircle(xPos -2,yPos -2, DIAMETRO);
+        lienzo.fillCircle(xPos -RADIO,yPos -RADIO, (RADIO*2));
     }
 }

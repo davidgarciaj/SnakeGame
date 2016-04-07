@@ -144,6 +144,23 @@ public class Snake
         return colisiona;
     }
 
+    /*
+     * Indica si la galleta colisiona con los segmentos de la serpiente 
+     */
+    public boolean colisionaCon(int xPos, int yPos)
+    {
+        boolean colisiona = false;
+        for (Segment segmentoSerpiente : segmentos) {
+            if ((segmentoSerpiente.getPosicionInicialX() == xPos && 
+                segmentoSerpiente.getPosicionInicialY() == yPos) || 
+                (segmentoSerpiente.getPosicionFinalX() == xPos && 
+                segmentoSerpiente.getPosicionFinalY() == yPos)) {
+                colisiona = true;
+            }
+        }
+        return colisiona;
+    }
+
     /**
      * Genera un movimiento en la serpiente
      */
