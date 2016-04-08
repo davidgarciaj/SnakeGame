@@ -10,11 +10,11 @@ public class SnakeGame
 {
     // instance variables - replace the example below with your own
     private Snake serpiente;
-    private static final int NUM_GALLETAS = 25;
+    private static final int NUM_GALLETAS = 100;
     private ArrayList<Galleta> galletas;
     private Canvas lienzo;
-    private static final int ANCHO = 150;
-    private static final int ALTO = 125;
+    private static final int ANCHO = 600;
+    private static final int ALTO = 500;
 
     /**
      * Constructor for objects of class SnakeGame
@@ -41,11 +41,16 @@ public class SnakeGame
      */
     public void animateSnake(){
         while(serpiente.mover(lienzo)){
+            int number = -1;
+            int cont = 0;
             for(Galleta galleta : galletas){
                 if(serpiente.colisionaCon(galleta.getXPos(),galleta.getYPos())){
                     comeGalleta(galleta);
+                    number = cont;
                 } 
+                cont++;
             }
+            if(number >= 0){galletas.remove(number);}
             lienzo.wait(100);
         }
         lienzo.drawString("Game Over", (ANCHO/2)-30,(ALTO/2)-5);
@@ -90,9 +95,7 @@ public class SnakeGame
      */
     public void comeGalleta(Galleta galleta){
         galleta.borrar(lienzo);
-        boolean come = false;
-        while(come){
-            come = serpiente.addSegment();
+        while(!serpiente.addSegment()){
         }
         serpiente.borrar(lienzo);
         serpiente.dibujar(lienzo);

@@ -27,7 +27,13 @@ public class Snake
         this.anchoLienzo = anchoLienzo;
         this.altoLienzo = altoLienzo;
         segmentos = new ArrayList<>();
-        for (int i = 0; i < NUMERO_SEGMENTOS_INICIALES; i++) {
+        Random rdn = new Random();
+        int posx = (rdn.nextInt((anchoLienzo-(Snake.MARGEN_LIENZO*2))/Segment.LONGITUD_SEGMENTO)
+                    *Segment.LONGITUD_SEGMENTO)+Snake.MARGEN_LIENZO;
+        int posy = (rdn.nextInt((altoLienzo-(Snake.MARGEN_LIENZO*2))/Segment.LONGITUD_SEGMENTO)
+                    *Segment.LONGITUD_SEGMENTO)+Snake.MARGEN_LIENZO;
+        segmentos.add(new Segment(posx,posy,rdn.nextInt(4),color));
+        for (int i = 1; i < NUMERO_SEGMENTOS_INICIALES; i++) {
             addSegment();
         }
     }

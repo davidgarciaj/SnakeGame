@@ -7,7 +7,7 @@ import java.awt.Color;
  */
 public class Galleta
 {
-    public static int NUM_GALLETAS = 0;
+    public static int numeroDeGalletas = 0;
     private int xPos;
     private int yPos;
     private static final int RADIO = 4;
@@ -17,7 +17,7 @@ public class Galleta
      */
     public Galleta(int xPos, int yPos)
     {
-        NUM_GALLETAS++;
+        numeroDeGalletas++;
         this.xPos = xPos;
         this.yPos = yPos;        
     }
@@ -47,6 +47,6 @@ public class Galleta
     public void borrar(Canvas lienzo)
     {
         lienzo.setForegroundColor(lienzo.getBackgroundColor());
-        lienzo.fillCircle(xPos -RADIO,yPos -RADIO, (RADIO*3));
+        lienzo.fillCircle(xPos -RADIO,yPos -RADIO, (RADIO*2));
     }
 }
